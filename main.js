@@ -1,17 +1,53 @@
 
-let saludo = document.getElementsByClassName('saludo');
-let inicio2 = prompt("Tres personas entraron a un hotel, para conocer los nombres de la persona que llego primero escribe 1, la persona que llego segunda escribe 2, y la persona que llego tercera escribe 3")
+    let credit = prompt("Simulador de credito\n Tenga en cuenta que si el credito es menor a $1500 tendra una tasa de interes del 5%, mientras que si el credito es mayor a $1500 tendra una tasa de interes del 3.5%.\n Ingrese el valor del credito a pedir entre $100 y $10000");
 
-switch (inicio2) {
-    case '1':
-        saludo[0].innerHTML = 'Daniel es el primero en llegar';
-    break;
-    case '2':
-        saludo[1].innerHTML = 'Alejandra es la segunda persona en llegar';
-    break;
-    case '3':
-        saludo[2].innerHTML = 'Santiago es la tercera persona en llegar';
-    break;
-}
 
-/*saludo[3].innerHTML = 'Santiago';*/
+
+
+    let resultado1 = document.getElementById("resultado1");    
+    let resultado2 = document.getElementById("resultado2");    
+    let resultado3 = document.getElementById("resultado3");    
+
+    let boton1 = document.getElementById("boton1");
+    boton1.addEventListener("click",respuestaclick1)
+    let boton2 = document.getElementById("boton2");
+    boton2.addEventListener("click",respuestaclick2)
+    let boton3 = document.getElementById("boton3");
+    boton3.addEventListener("click",respuestaclick3)
+
+    function respuestaclick1(){
+        if (credit <1500 ) {
+            interes = 5
+            interest = credit * 0.05
+        } else {
+            interes = 3.5
+            interest = credit * 0.035
+        }
+        valorCuota = credit / 6 ;
+        resultado1.innerHTML = "Tu credito de $" + credit + " sera divido en 6 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al " + interes + "% de intereses.";
+    }
+    function respuestaclick2(){
+        if (credit <1500 ) {
+            interes = 5
+            interest = credit * 0.05
+        } else {
+            interes = 3.5
+            interest = credit * 0.035
+        }
+        valorCuota = credit / 12 ;
+        resultado2.innerHTML = "Tu credito de $" + credit + " sera divido en 12 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al " + interes + "% de intereses.";
+    }
+
+    function respuestaclick3(){
+        if (credit <1500 ) {
+            interes = 5
+            interest = credit * 0.05
+        } else {
+            interes = 3.5
+            interest = credit * 0.035
+        }
+        valorCuota = credit / 24 ;
+        resultado3.innerHTML = "Tu credito de $" + credit + " sera divido en 24 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al" + interes + "% de intereses.";
+    }
+
+    
