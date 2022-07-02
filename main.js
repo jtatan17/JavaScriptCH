@@ -1,53 +1,37 @@
+let stockproducts = [
+    {id:1, nombre: "Ajuste", cantidad: 1, desc: "Aceite para motocicleta", precio: 1500, img:"./imagenes/benjamin-brunner-K3cjUOMmMhc-unsplash.jpg"},
+    {id:2, nombre: "Cambio correa", cantidad: 1, desc: "Aceite para motocicleta", precio: 1500, img:"./imagenes/chad-kirchoff-xe-e69j6-Ds-unsplash.jpg"},
+    {id:3, nombre: "Sincronizacion", cantidad: 1, desc: "Aceite para motocicleta", precio: 1500, img:"./imagenes/christian-buehner-Fd6osyVbtG4-unsplash.jpg"},
+    {id:4, nombre: "Mantenimiento", cantidad: 1, desc: "Aceite para motocicleta", precio: 1500, img:"./imagenes/maxim-hopman-s4d_ESS0ylA-unsplash.jpg"},
+    {id:5, nombre: "Cambio de aceite", cantidad: 1, desc: "Aceite para motocicleta", precio: 1500, img:"./imagenes/tim-mossholder-V37iTrYZz2E-unsplash.jpg"},
+]
 
-    let credit = prompt("Simulador de credito\n Tenga en cuenta que si el credito es menor a $1500 tendra una tasa de interes del 5%, mientras que si el credito es mayor a $1500 tendra una tasa de interes del 3.5%.\n Ingrese el valor del credito a pedir entre $100 y $10000");
+const contenedorProductos = document.getElementById("contenedorproductos")
+const contenedorCarrito = document.getElementById
+let carrito = []
 
 
+stockproducts.forEach ((producto) => {
+    const div = document.createElement("div");
+    div.classList.add("producto");
+    div.innerHTML = `
+    <img src= ${producto.img}>
+    <h3>${producto.nombre}</h3>
+    <p>${producto.desc}</p>
+    <p class = "precioProducto" >precio:$ ${producto.precio}</p>
+    <button id = "agregar${producto.id} class = "botonagregar">Agregar</button>` ;
 
+    contenedorProductos.appendChild(div);
 
-    let resultado1 = document.getElementById("resultado1");    
-    let resultado2 = document.getElementById("resultado2");    
-    let resultado3 = document.getElementById("resultado3");    
-
-    let boton1 = document.getElementById("boton1");
-    boton1.addEventListener("click",respuestaclick1)
-    let boton2 = document.getElementById("boton2");
-    boton2.addEventListener("click",respuestaclick2)
-    let boton3 = document.getElementById("boton3");
-    boton3.addEventListener("click",respuestaclick3)
-
-    function respuestaclick1(){
-        if (credit <1500 ) {
-            interes = 5
-            interest = credit * 0.05
-        } else {
-            interes = 3.5
-            interest = credit * 0.035
-        }
-        valorCuota = credit / 6 ;
-        resultado1.innerHTML = "Tu credito de $" + credit + " sera divido en 6 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al " + interes + "% de intereses.";
-    }
-    function respuestaclick2(){
-        if (credit <1500 ) {
-            interes = 5
-            interest = credit * 0.05
-        } else {
-            interes = 3.5
-            interest = credit * 0.035
-        }
-        valorCuota = credit / 12 ;
-        resultado2.innerHTML = "Tu credito de $" + credit + " sera divido en 12 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al " + interes + "% de intereses.";
-    }
-
-    function respuestaclick3(){
-        if (credit <1500 ) {
-            interes = 5
-            interest = credit * 0.05
-        } else {
-            interes = 3.5
-            interest = credit * 0.035
-        }
-        valorCuota = credit / 24 ;
-        resultado3.innerHTML = "Tu credito de $" + credit + " sera divido en 24 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al" + interes + "% de intereses.";
-    }
-
+    const boton = document.getElementById(`agregar${producto.id}`);
+    /*
+    boton.addEventListener('click', ()=> {
+        agregarAlCarrito(producto.id)
+    })*/
+})
     
+const agregarAlCarrito = (prodId) => {
+    const item = stockproducts.find((prod) => prod.id === prodId)
+    carrito.push(item);
+    console.log(carrito);
+}
