@@ -6,27 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio DOM</title>
     <link rel=stylesheet href="./style.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Manipulando el DOM</h1>
-    <div>
-        <h5>En cuantas cuotas quieres dividir tu credito</h5>
-    </div>
-    <section>
-        <section>
-            <div id="resultado1"> 6 Cuotas</div>
-            <button id="boton1">Click</button>
+    <header>
+        <p class="title">Banco Centro Andino</p>
+    </header>
+    <main>
+        <section class="container">
+            <p class="paragraph">Bienvenido al simulador de credito, tenga en cuenta que si el credito es menor a $1500 tendra una tasa de interes del 5%, mientras que si el credito es mayor a $1500 tendra una tasa de interes del 3.5%.</p>
+            <section>
+                <p class="paragrph2nd">En cuantas cuotas quieres dividir tu prestamo</p>
+                <div class="contador">
+                    <button id="resta" class="elemntocontador1 resta">-</button>
+                    <h6 id="elemntocontador" class="elemntocontador">0</h6>
+                    <button id="suma" class="elemntocontador1 suma">+</button>
+                </div>
+            </section>
         </section>
-        <section>
-            <div id="resultado2">12 Cuotas</div>
-            <button id="boton2">Click</button>
+        <section class="container">
+            <section>
+                <p class="paragrph3nd">Cual es el valor del prestamo</p>
+                <input id="moneyamount" type:"number" />
+                <button id="Simularbtn">Simular</button>
+            </section>
+            <section id="resultado" >
+                Aca iria el resultado
+            </section>
         </section>
-        <section>
-            <div id="resultado3">24 Cuotas</div>
-            <button id="boton3">Click</button>
-        </section>
-    </section>
-
+    </main>
 </body>
 <script src="main.js"></script>
 </html> 
