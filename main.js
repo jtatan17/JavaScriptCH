@@ -20,17 +20,13 @@ botonresta.addEventListener("click", () =>{
         numerocuotas.innerHTML = numero;
     }
 });
-botonresta.addEventListener("click", () =>{
-
-    if(numero==0){}
-    else {numero--;
-        numerocuotas.innerHTML = numero;
-    }
-});
-
 simuladorbtn.addEventListener("click", OperacionResultado)
 
+numero;
+
 function OperacionResultado () {
+    credit = input1.value;
+    let numerocuotas = numero;
     if (credit <1500 ) {
         interes = 5
         interest = credit * 0.05
@@ -38,7 +34,7 @@ function OperacionResultado () {
         interes = 3.5
         interest = credit * 0.035
     }
-    valorCuota = credit / numero ;
+    valorCuota = credit / numerocuotas ;
     resultado.innerHTML = "Tu credito de $" + credit + " sera divido en 6 cuotas. Cada cuota tendra un valor de $" + valorCuota + " mas $" + interest.toFixed(2) + ", equivalente al " + interes + "% de intereses.";
 }
 
