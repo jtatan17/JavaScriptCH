@@ -1,101 +1,13 @@
 body {
-    background: linear-gradient(85deg, #3f5efb, #fc466b);;
+background-color: gray;
 }
 
 h1 {
     color:white;
-} 
+}
 
-.title{
+
+h1 {
+    color:white;
     text-align: center;
-    height: 4rem;
-    width: auto;
-    font-family: 'DynaPuff', cursive;
-    font-size: xx-large;
-    color: #14213d;
-}
-
-.paragraph{
-    text-align: center;
-    height: 4rem;
-    width: 60%;
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    color: #14216d;
-    margin-top: 5%;
-}
-.paragrph2nd{
-    text-align: center;
-    height: 4rem;
-    width: auto;
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    color: #14216d;
-    margin-top: 5%;
-    padding-left: 4rem;
-}
-
-.paragrph3nd{
-    text-align: start;
-    height: 4rem;
-    width: auto;
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    color: #14216d;
-    margin-top: 5%;
-    padding-left: 4rem;
-}
-
-.container {
-    flex-direction: row;
-    display: flex;
-}
-
-.contador {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.elemntocontador {
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    height: 100px;
-}
-
-.elemntocontador1 {
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    height: 60px;
-}
-
-#moneyamount {
-    width: 70%;
-    height: 50px;
-    font-size: x-large;
-}
-
-#Simularbtn {
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    height: 60px;
-}
-
-#resultado {
-    text-align: start;
-    height: 4rem;
-    width: auto;
-    font-family: 'DynaPuff', cursive;
-    font-family: 'Roboto Mono', monospace;
-    font-size: xx-large;
-    color: #14216d;
-    margin-top: 5%;
-    padding-left: 4rem;
 }
