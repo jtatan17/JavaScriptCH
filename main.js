@@ -43,7 +43,7 @@ vaciarCarrito.onclick = () => {
 }
 finalizarCompra.onclick = () => console.log(carrito);
 
-*/
+
 
 let productosArray = [];
 
@@ -87,10 +87,12 @@ productosArray.forEach((elemento) => {
   optionProd.setAttribute("id", `${elemento.id}`);
   selectProd.append(optionProd);
 });
+*/
 
+/* 
 let preciosMedianos = [];
-/* for (let i = 0; i < productosArray.length; i++)
-  preciosMedianos.push(productosArray[i].precios.medium); */
+for (let i = 0; i < productosArray.length; i++)
+  preciosMedianos.push(productosArray[i].precios.medium); 
 const resultadoFiltro = document.getElementById("filtro");
 const botonIngresar = document.getElementById('FiltrarPrecio');
 botonIngresar.onclick = () => {
@@ -122,3 +124,83 @@ let pizzaEP = () => {
   return pizzas.filter((pizza) => (pizza.prices.medium >= 12))
 }
 */
+const menu = [
+  {
+    id:1,
+    img: 'Images/Pepperoni.jpg',
+    nombre: "Pepperoni",
+    precio: 15,
+    desc: "Descripcion generica"
+  },
+  {
+    id:2,
+    img: 'Images/Hawaiana.jpg',
+    nombre: "Hawaiana",
+    precio: 12,
+    desc: "Descripcion generica"
+  },
+  {
+    id:3,
+    img: 'Images/Italo.jpg',
+    nombre: "Italo",
+    precio: 10,
+    desc: "Descripcion generica"
+  },
+  {
+    id:4,
+    img: 'Images/PolloChamp.jpg',
+    nombre: "Pollo y Champiñones",
+    precio: 13,
+    desc: "Descripcion generica"
+  },{
+    id:5,
+    img: 'Images/Veggie.jpg',
+    nombre: "Veggie",
+    precio: 11,
+    desc: "Descripcion generica"
+  }
+];
+
+const mainContainer = document.getElementById('main-container');
+
+const addToCart = (prodId) => {
+  const item = menu.find((prod) => prod.id === prodId)
+  carrito.push(item)
+}
+
+let carrito = [];
+
+
+menu.forEach((product) => {
+  const div =document.createElement('div')
+  div.classList.add('card')
+  div.innerHTML = 
+  `
+  <div class="imagecontainer">
+  <img class="pizzaimg" src= ${product.img} alt=""
+  </div>
+  <div class="card-footer">
+    <div class="card-description">
+    <h3>${product.nombre}</h3>
+    <p>${product.desc}</p>
+    <p>Precio:$ ${product.precio}</p>
+    </div>
+    <div class="card-interaction">
+      <button id="addButton" class="button-23">+</button>
+      <button id="removeButton" class="button-23">-</button>
+    </div>
+  </div>
+  `;
+  mainContainer.appendChild(div);
+  const addButton = document.getElementById('addButton');
+  addButton.addEventListener('click', () => {
+    addToCart(product.id);
+  })
+});
+
+
+
+console.log(carrito);
+
+/*${product.id}
+${product.id}*/

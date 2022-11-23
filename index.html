@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel=stylesheet href="./style.css" >
-</head>
-<body>
-    <!-- 
-    <h1>Bienvenido al desafio entregable #1</h1>
-    
-    <div class="divPrincipal">
-        <select name="lista" id="lista">
-        </select>
-
-        <button id="IngresarProd">Ingresa Producto</button>
-        <button id="vaciarCarrito">vaciar Carrito</button>
-        <button id="finalizarCompra">Finalizar finalizarCompra</button>
-    </div>
-    -->
-
-    <section id="mainContainer">
-        <div class="container">
-            <p>
-                Menu de un restaurnate con algunos opciones de filtro
-            </p>
-            <div class="divPrincipal">
-                <select name="lista" id="lista">
-                </select>
-                <button id="FiltrarPrecio">Precios tamaños medianos</button>
-                <div name = "filtro" id="filtro"> </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIzzeria italo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <h5 class="menu">Menu</h5>
+        <div class="navoptions">
+          <div>
+            <h5 class="navElement">Mis pedidos</h5>
+          </div>
+          <div>
+            <h5 class="navElement">Ingresar</h5>
+          </div>
         </div>
-    </section>
-</body>
-<script src="main.js"></script>
-</html> 
+      </nav>
+      <section>
+        <div class="sidebar">
+          <ul id="opciones-menu">
+            <li class="listelement">Panseroti</li>
+            <li class="listelement">Lasgna</li>
+            <li class="listelement">Pizzas</li>
+            <li class="listelement">Spaghetti</li>
+            <li class="listelement">Rabioles</li>
+          </ul>
+        </div>
+        <div id="main-container">
+          <!--
+              <div class="card">
+            <div class="imagecontainer">
+              <img class="pizzaimg" src="Images/Veggie.jpg" />
+            </div>
+            <div class="card-footer">
+              <div class="card-description">
+                <h3>Pepperoni</h3>
+                <p>Piiza deliciosa de pepperoni</p>
+                <p>Precio:$15</p>
+              </div>
+              <div class="card-interaction">
+                <button id="addButton" class="button-23">+</button>
+                <button id="removeButton" class="button-23">-</button>
+              </div>
+            </div>
+             -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="main.js"></script>
+</html>
