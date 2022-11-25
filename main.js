@@ -7,6 +7,7 @@ const menu = [
     nombre: "Pepperoni",
     precio: 15,
     desc: "Descripcion generica",
+    cantidad:1,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const menu = [
     nombre: "Hawaiana",
     precio: 12,
     desc: "Descripcion generica",
+    cantidad:1,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ const menu = [
     nombre: "Italo",
     precio: 10,
     desc: "Descripcion generica",
+    cantidad:1,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ const menu = [
     nombre: "Pollo y Champiñones",
     precio: 13,
     desc: "Descripcion generica",
+    cantidad:1,
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ const menu = [
     nombre: "Veggie",
     precio: 11,
     desc: "Descripcion generica",
+    cantidad:1,
   },
 ];
 
@@ -65,35 +70,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
+function ripeater (index) {
+  const exists = cart.some (prod => prod.id === menu[index].id)
+if (exists) {
+  const prod = cart.map (prod => {
+    if (prod.id === menu[index].id){
+      prod.cantidad++
+    } 
+  })
+} else {
+  cart.push(menu[index]);
+  console.log(cart);
+}
+  
+}
+
+
 /*Eventos de botones para agregar */
 addButton1.onclick = () => {
-  cart.push(menu[0]);
+  ripeater(0);
   updateCart();
-  console.log(cart);
 }
 
 addButton2.onclick = () => {
-  cart.push(menu[1]);
+  ripeater(1);
   updateCart();
-  console.log(cart);
+  
 }
 
 addButton3.onclick = () => {
-  cart.push(menu[2]);
+  ripeater(2);
   updateCart();
-  console.log(cart);
+  
 }
 
 addButton4.onclick = () => {
-  cart.push(menu[3]);
+  ripeater(3);
   updateCart();
-  console.log(cart);
+  
 }
 
 addButton5.onclick = () => {
-  cart.push(menu[4]);
+  ripeater(4);
   updateCart();
-  console.log(cart);
 }
 /*Funcion para eliminar del carrito */
 const deleteFromCart = (prodId) => {
@@ -118,6 +137,7 @@ const updateCart = ( ) => {
     div.innerHTML = `
     <p>${prod.nombre}</p>
     <p>${prod.precio}</p>
+    <p>${prod.cantidad}</p>
     <button onclick ="deleteFromCart(${prod.id})" class="boton-eliminar">Eliminar</button>
     `
     productsInCart.appendChild(div);
