@@ -59,6 +59,10 @@ h5 {
     touch-action: manipulation;
 }
 
+#cartCounter {
+    padding: 1rem;
+}
+
 .productInCart {
     display: flex;
 

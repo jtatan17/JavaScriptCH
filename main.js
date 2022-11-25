@@ -1,3 +1,5 @@
+/*Array de productos */
+
 const menu = [
   {
     id: 1,
@@ -36,13 +38,13 @@ const menu = [
   },
 ];
 
-const exitBtn = document.getElementById('exitBtn')
-const btnCart = document.getElementById('botonCarrito')
-const cartContainer = document.getElementById('productsInCart')
-btnCart.onclick = () => {document.getElementById('cartcontainer').style.display = 'block'}
-exitBtn.onclick = () => {document.getElementById('cartcontainer').style.display = 'none'}
+const exitBtn = document.getElementById('exitBtn');
+const btnCart = document.getElementById('botonCarrito');
+const cartContainer = document.getElementById('productsInCart');
+btnCart.onclick = () => {document.getElementById('cartcontainer').style.display = 'block'};
+exitBtn.onclick = () => {document.getElementById('cartcontainer').style.display = 'none'};
 
-let carrito = [];
+let cart = [];
 
 
 const mainContainer = document.getElementById("main-container");
@@ -52,98 +54,77 @@ const addButton2 = document.getElementById("addButton2");
 const addButton3 = document.getElementById("addButton3");
 const addButton4 = document.getElementById("addButton4");
 const addButton5 = document.getElementById("addButton5");
+const cartCounter = document.getElementById("cartCounter");
+const totalPrice = document.getElementById('totalPrice');
 
+/*LocalSotarege*/
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('carrito')){
+    cart = JSON.parse(localStorage.getItem('carrito'));
+    updateCart();
+  }
+})
+
+/*Eventos de botones para agregar */
 addButton1.onclick = () => {
-  carrito.push(menu[0]);
+  cart.push(menu[0]);
   updateCart();
-  console.log(carrito);
+  console.log(cart);
 }
 
 addButton2.onclick = () => {
-  carrito.push(menu[1]);
+  cart.push(menu[1]);
   updateCart();
-  console.log(carrito);
+  console.log(cart);
 }
 
 addButton3.onclick = () => {
-  carrito.push(menu[2]);
+  cart.push(menu[2]);
   updateCart();
-  console.log(carrito);
+  console.log(cart);
 }
 
 addButton4.onclick = () => {
-  carrito.push(menu[3]);
+  cart.push(menu[3]);
   updateCart();
-  console.log(carrito);
+  console.log(cart);
 }
 
 addButton5.onclick = () => {
-  carrito.push(menu[4]);
+  cart.push(menu[4]);
   updateCart();
-  console.log(carrito);
+  console.log(cart);
+}
+/*Funcion para eliminar del carrito */
+const deleteFromCart = (prodId) => {
+  const item = cart.find((prod) => prod.id === prodId);
+  const index = cart.indexOf(item);
+  cart.splice(index,1);
+  updateCart();
+}
+/*Funcion para vaciar carrito */
+const emptyCart = document.getElementById('emptyCart')
+emptyCart.onclick =() => {
+  cart.length = 0;
+  updateCart();
 }
 
-
+/*Funcion para actualizar el carrito */
 const updateCart = ( ) => {
   productsInCart.innerHTML = '';
-  carrito.forEach((prod) => {
+  cart.forEach((prod) => {
     const div = document.createElement('div');
     div.className = ('productInCart')
     div.innerHTML = `
     <p>${prod.nombre}</p>
     <p>${prod.precio}</p>
+    <button onclick ="deleteFromCart(${prod.id})" class="boton-eliminar">Eliminar</button>
     `
     productsInCart.appendChild(div);
+
+    localStorage.setItem('carrito', JSON.stringify(cart));
   })
+  cartCounter.innerText = cart.length ;
+  totalPrice.innerText = cart.reduce((acc,prod) => acc + prod.precio, 0)
 }
 
-const emptyCart = document.getElementById('emptyCart')
-emptyCart.onclick = () => {
-  carrito = []; 
-  console.log(carrito);
-  productInCart.innerHTML = '';
-}
-
-menu.forEach((product) => {
-/*   
-  const div = document.createElement('div');
-  div.setAttribute( 'class','card');
-  div.innerHTML = `
-  <div class="imagecontainer">
-  <img class="pizzaimg" src= ${product.img} alt=""
-  </div>
-  <div class="card-footer">
-    <div class="card-description">
-    <h3>${product.nombre}</h3>
-    <p>${product.desc}</p>
-    <p>Precio:$ ${product.precio}</p>
-    </div>
-    <div class="card-interaction">
-      <button id="addButton${product.id}" class="button-23">+</button>
-      <button id="removeButton" class="button-23">-</button>
-    </div>
-  </div>
-  `;
-  
-  mainContainer.appendChild(div);
-  const addButton = document.getElementById("addButton${product.id}"); */
-  /*
-  addButton.addEventListener("click", () => {
-    addToCart(product.id)
-  });*/
-  
-  
-});
-
-
-
-function addToCart(prodId) {
-  const item = menu.some((prod) => prod.id === prodId);
-  carrito.push(item);
-}
-
-
-
-
-/*${product.id}
-${product.id}*/
