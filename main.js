@@ -1,181 +1,114 @@
-
-/*
-let productosArray = [];
-
-class NewProduct {
-  constructor(id, name, price, stock) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.stock = stock;
-  }
-}
-
-const iphone = new NewProduct(1, "iphone", 700, 250);
-productosArray.push(iphone);
-const imac = new NewProduct(2, "imac", 1200, 150);
-productosArray.push(imac);
-const ipad = new NewProduct(3, "ipad", 600, 300);
-productosArray.push(ipad);
-
-
-const selectProd = document.getElementById("lista");
-productosArray.forEach((elemento) => {
-  const optionProd = document.createElement("option");
-  optionProd.innerText = `${elemento.name}: $${elemento.price}`;
-  optionProd.setAttribute("id", `${elemento.id}`);
-  selectProd.append(optionProd);
-});
-
-
-const botonIngresar = document.getElementById('IngresarProd');
-const vaciarCarrito = document.getElementById('vaciarCarrito');
-const finalizarCompra = document.getElementById('finalizarCompra');
-let carrito = [];
-botonIngresar.onclick = () => {
-    const indexProd = selectProd.selectedIndex;
-    const productoSeleccionado = productosArray[indexProd];
-    carrito.push(productoSeleccionado);
-}
-vaciarCarrito.onclick = () => {
-    carrito = [];
-    console.log(carrito)
-}
-finalizarCompra.onclick = () => console.log(carrito);
-
-
-
-let productosArray = [];
-
-class NewProduct {
-  constructor(id, name, contieneCarne, precios) {
-    this.id = id;
-    this.name = name;
-    this.contieneCarne = contieneCarne;
-    this.precios = precios;
-  }
-}
-
-class ListPrecio {
-  constructor(small, medium, large) {
-    this.small = small;
-    this.medium = medium;
-    this.large = large;
-  }
-}
-
-let precioUno = new ListPrecio(5, 10, 15);
-let pizzaUno = new NewProduct(1, "Pepperoni", true, precioUno);
-productosArray.push(pizzaUno);
-
-let precioDos = new ListPrecio(6, 11, 16);
-let pizzaDos = new NewProduct(2, "Vegetariana", false, precioDos);
-productosArray.push(pizzaDos);
-
-let precioTres = new ListPrecio(7, 11, 17);
-let pizzaTres = new NewProduct(3, "Pollo con Champ", true, precioTres);
-productosArray.push(pizzaTres);
-
-let precioCuatro = new ListPrecio(6, 12, 17);
-let pizzaCuatro = new NewProduct(4, "Tropical", false, precioCuatro);
-productosArray.push(pizzaCuatro);
-
-const selectProd = document.getElementById("lista");
-productosArray.forEach((elemento) => {
-  let optionProd = document.createElement("option");
-  optionProd.innerText = `${elemento.name}: Peque$${elemento.precios.small}, Med $${elemento.precios.medium}, Grande $${elemento.precios.large}`;
-  optionProd.setAttribute("id", `${elemento.id}`);
-  selectProd.append(optionProd);
-});
-*/
-
-/* 
-let preciosMedianos = [];
-for (let i = 0; i < productosArray.length; i++)
-  preciosMedianos.push(productosArray[i].precios.medium); 
-const resultadoFiltro = document.getElementById("filtro");
-const botonIngresar = document.getElementById('FiltrarPrecio');
-botonIngresar.onclick = () => {
-  productosArray.forEach((elemento) => {
-    let productoFiltrado = document.createElement("p");
-    productoFiltrado.innerText = `${elemento.name}: Med $${elemento.precios.medium}`;
-    productoFiltrado.setAttribute("id", `${elemento.id}`);
-    resultadoFiltro.append(productoFiltrado);
-  });
-};
-
-/* const botonIngresar = document.getElementById('IngresarProd');
-const vaciarCarrito = document.getElementById('vaciarCarrito');
-const finalizarCompra = document.getElementById('finalizarCompra');
-let carrito = [];
-botonIngresar.onclick = () => {
-    const indexProd = selectProd.selectedIndex;
-    const productoSeleccionado = productosArray[indexProd];
-    carrito.push(productoSeleccionado);
-}
-
-
-vaciarCarrito.onclick = () => {
-    carrito = [];
-    console.log(carrito)
-} */
-/*
-let pizzaEP = () => {
-  return pizzas.filter((pizza) => (pizza.prices.medium >= 12))
-}
-*/
 const menu = [
   {
-    id:1,
-    img: 'Images/Pepperoni.jpg',
+    id: 1,
+    img: "Images/Pepperoni.jpg",
     nombre: "Pepperoni",
     precio: 15,
-    desc: "Descripcion generica"
+    desc: "Descripcion generica",
   },
   {
-    id:2,
-    img: 'Images/Hawaiana.jpg',
+    id: 2,
+    img: "Images/Hawaiana.jpg",
     nombre: "Hawaiana",
     precio: 12,
-    desc: "Descripcion generica"
+    desc: "Descripcion generica",
   },
   {
-    id:3,
-    img: 'Images/Italo.jpg',
+    id: 3,
+    img: "Images/Italo.jpg",
     nombre: "Italo",
     precio: 10,
-    desc: "Descripcion generica"
+    desc: "Descripcion generica",
   },
   {
-    id:4,
-    img: 'Images/PolloChamp.jpg',
+    id: 4,
+    img: "Images/PolloChamp.jpg",
     nombre: "Pollo y Champiñones",
     precio: 13,
-    desc: "Descripcion generica"
-  },{
-    id:5,
-    img: 'Images/Veggie.jpg',
+    desc: "Descripcion generica",
+  },
+  {
+    id: 5,
+    img: "Images/Veggie.jpg",
     nombre: "Veggie",
     precio: 11,
-    desc: "Descripcion generica"
-  }
+    desc: "Descripcion generica",
+  },
 ];
 
-const mainContainer = document.getElementById('main-container');
-
-const addToCart = (prodId) => {
-  const item = menu.find((prod) => prod.id === prodId)
-  carrito.push(item)
-}
+const exitBtn = document.getElementById('exitBtn')
+const btnCart = document.getElementById('botonCarrito')
+const cartContainer = document.getElementById('productsInCart')
+btnCart.onclick = () => {document.getElementById('cartcontainer').style.display = 'block'}
+exitBtn.onclick = () => {document.getElementById('cartcontainer').style.display = 'none'}
 
 let carrito = [];
 
 
+const mainContainer = document.getElementById("main-container");
+
+const addButton1 = document.getElementById("addButton1");
+const addButton2 = document.getElementById("addButton2");
+const addButton3 = document.getElementById("addButton3");
+const addButton4 = document.getElementById("addButton4");
+const addButton5 = document.getElementById("addButton5");
+
+addButton1.onclick = () => {
+  carrito.push(menu[0]);
+  updateCart();
+  console.log(carrito);
+}
+
+addButton2.onclick = () => {
+  carrito.push(menu[1]);
+  updateCart();
+  console.log(carrito);
+}
+
+addButton3.onclick = () => {
+  carrito.push(menu[2]);
+  updateCart();
+  console.log(carrito);
+}
+
+addButton4.onclick = () => {
+  carrito.push(menu[3]);
+  updateCart();
+  console.log(carrito);
+}
+
+addButton5.onclick = () => {
+  carrito.push(menu[4]);
+  updateCart();
+  console.log(carrito);
+}
+
+
+const updateCart = ( ) => {
+  productsInCart.innerHTML = '';
+  carrito.forEach((prod) => {
+    const div = document.createElement('div');
+    div.className = ('productInCart')
+    div.innerHTML = `
+    <p>${prod.nombre}</p>
+    <p>${prod.precio}</p>
+    `
+    productsInCart.appendChild(div);
+  })
+}
+
+const emptyCart = document.getElementById('emptyCart')
+emptyCart.onclick = () => {
+  carrito = []; 
+  console.log(carrito);
+  productInCart.innerHTML = '';
+}
+
 menu.forEach((product) => {
-  const div =document.createElement('div')
-  div.classList.add('card')
-  div.innerHTML = 
-  `
+/*   
+  const div = document.createElement('div');
+  div.setAttribute( 'class','card');
+  div.innerHTML = `
   <div class="imagecontainer">
   <img class="pizzaimg" src= ${product.img} alt=""
   </div>
@@ -186,21 +119,31 @@ menu.forEach((product) => {
     <p>Precio:$ ${product.precio}</p>
     </div>
     <div class="card-interaction">
-      <button id="addButton" class="button-23">+</button>
+      <button id="addButton${product.id}" class="button-23">+</button>
       <button id="removeButton" class="button-23">-</button>
     </div>
   </div>
   `;
+  
   mainContainer.appendChild(div);
-  const addButton = document.getElementById('addButton');
-  addButton.addEventListener('click', () => {
-    addToCart(product.id);
-  })
+  const addButton = document.getElementById("addButton${product.id}"); */
+  /*
+  addButton.addEventListener("click", () => {
+    addToCart(product.id)
+  });*/
+  
+  
 });
 
 
 
-console.log(carrito);
+function addToCart(prodId) {
+  const item = menu.some((prod) => prod.id === prodId);
+  carrito.push(item);
+}
+
+
+
 
 /*${product.id}
 ${product.id}*/

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PIzzeria italo</title>
     <link rel="stylesheet" href="./style.css" />
+    
   </head>
   <body>
     <main>
@@ -16,7 +17,7 @@
             <h5 class="navElement">Mis pedidos</h5>
           </div>
           <div>
-            <h5 class="navElement">Ingresar</h5>
+            <button id= "botonCarrito" class="botonCarrito">Carrito</button>
           </div>
         </div>
       </nav>
@@ -31,10 +32,18 @@
           </ul>
         </div>
         <div id="main-container">
-          <!--
-              <div class="card">
+          <div id = "cartcontainer" class="cartcontainer">
+            <button id="exitBtn">
+              Salir
+            </button>
+            <button id="emptyCart">Eliminar</button>
+            <div id="productsInCart">
+              
+            </div>
+          </div>
+          <div class="card">
             <div class="imagecontainer">
-              <img class="pizzaimg" src="Images/Veggie.jpg" />
+              <img class="pizzaimg" src="Images/Pepperoni.jpg" />
             </div>
             <div class="card-footer">
               <div class="card-description">
@@ -43,11 +52,74 @@
                 <p>Precio:$15</p>
               </div>
               <div class="card-interaction">
-                <button id="addButton" class="button-23">+</button>
-                <button id="removeButton" class="button-23">-</button>
+                <button id="addButton1" class="button-23">Agregar</button>
+                
               </div>
             </div>
-             -->
+          </div>
+          <div class="card">
+            <div class="imagecontainer">
+              <img class="pizzaimg" src="Images/Hawaiana.jpg" />
+            </div>
+            <div class="card-footer">
+              <div class="card-description">
+                <h3>Hawaiana</h3>
+                <p>Piiza deliciosa Hawaiana</p>
+                <p>Precio:$12</p>
+              </div>
+              <div class="card-interaction">
+                <button id="addButton2" class="button-23">Agregar</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imagecontainer">
+              <img class="pizzaimg" src="Images/Italo.jpg" />
+            </div>
+            <div class="card-footer">
+              <div class="card-description">
+                <h3>Italo</h3>
+                <p>Piiza deliciosa Italo</p>
+                <p>Precio:$10</p>
+              </div>
+              <div class="card-interaction">
+                <button id="addButton3" class="button-23">Agregar</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imagecontainer">
+              <img class="pizzaimg" src="Images/PolloChamp.jpg" />
+            </div>
+            <div class="card-footer">
+              <div class="card-description">
+                <h3>PolloChamp</h3>
+                <p>Piiza deliciosa de Pollo con Champ</p>
+                <p>Precio:$13</p>
+              </div>
+              <div class="card-interaction">
+                <button id="addButton4" class="button-23">Agregar</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imagecontainer">
+              <img class="pizzaimg" src="Images/Veggie.jpg" />
+            </div>
+            <div class="card-footer">
+              <div class="card-description">
+                <h3>Veggie</h3>
+                <p>Piiza deliciosa Veggie</p>
+                <p>Precio:$11</p>
+              </div>
+              <div class="card-interaction">
+                <button id="addButton5" class="button-23">Agregar</button>
+                
+              </div>
+            </div>
           </div>
         </div>
       </section>
