@@ -164,7 +164,7 @@ buyItems.onclick = () => {
   } else {
     Swal.fire({
       title: "COMPRA FINAL",
-      text: `Usted ha comprado ${cart.length} productos`,
+      text: `Usted va a comprar ${cart.length} productos, por un valor de $${totalPrice.innerText}, `,
     });
   }
 };
