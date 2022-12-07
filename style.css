@@ -6,7 +6,8 @@
 
 nav {
     flex-direction: row;
-    background-color: #E85D04;
+    background: rgb(253,29,29);
+    background: linear-gradient(63deg, rgba(253,29,29,1) 4%, rgba(252,176,69,1) 100%);
     height: 5rem;
     display: flex;
     width: 100%;
@@ -21,6 +22,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: underline;
 }
 
 .navoptions {
@@ -65,7 +67,7 @@ h5 {
 
 .productInCart {
     display: flex;
-
+    justify-content: flex-end;
 }
 
 .productInCart p {
@@ -74,11 +76,13 @@ h5 {
 section {
     display: flex;
     height: 900px;
-    background-color: aqua;
+    background: rgb(2,0,36);
+    background: linear-gradient(63deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 54%, rgba(0,212,255,1) 89%);;
 }
 
 .sidebar {
-    background-color: #FAA307;
+    background: rgb(253,29,29);
+        background: linear-gradient(63deg, rgba(253,29,29,1) 4%, rgba(252,176,69,1) 100%);
     width: 15%;
     height: auto;
 }
