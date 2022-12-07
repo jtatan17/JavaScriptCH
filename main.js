@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/*Contador de cada producto del carrito */
 function ripeater(index) {
   const exists = cart.some((prod) => prod.id === menu[index].id);
   if (exists) {
@@ -135,16 +136,12 @@ const updateCart = () => {
     div.className = "productInCart";
     div.innerHTML = `
     <p>${prod.nombre}</p>
-    <p>${prod.precio}</p>
-    <p>${prod.cantidad}</p>
+    <p>$ ${prod.precio}</p>
+    <p>Cantidad ${prod.cantidad}</p>
     <button onclick ="deleteFromCart(${prod.id})" class="boton-eliminar button-23">Eliminar</button>
     `;
     productsInCart.appendChild(div);
-
     localStorage.setItem("carrito", JSON.stringify(cart));
-
-    let productCounter = prod.cantidad;
-    let productTotal = productCounter * prod.totalPrice;
   });
   cartCounter.innerText = cart.length;
   totalPrice.innerText = cart.reduce(
