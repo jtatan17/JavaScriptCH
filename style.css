@@ -107,10 +107,11 @@ section {
 .card {
     background-color: #FFBA08; 
     width: 350px;
-    height: 300px;
+    height: fit-content;
     margin-top: 3rem;
-    padding: 3rem;
+    padding: 2rem;
     margin-left: 3rem;
+    
 }
 
 .imagecontainer{
@@ -128,7 +129,9 @@ section {
     flex-direction: column;    
     padding: 0rem 3rem;
 }
-
+.card-description p{
+    padding: 0.5rem 0.5rem;
+}
 .card-interaction {
     display: flex;
 }

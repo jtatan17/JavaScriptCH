@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "img": "Images/Pepperoni.jpg",
+    "nombre": "Pepperoni",
+    "precio": 15,
+    "desc": "Deliciosa pizza de ppeperoni con queso y receta tipica a la pepperoni",
+    "cantidad": 1
+  },
+  {
+    "id": 2,
+    "img": "Images/Hawaiana.jpg",
+    "nombre": "Hawaiana",
+    "precio": 12,
+    "desc": "El mejor sabor hawaiano con los mejores ingredientes",
+    "cantidad": 1
+  },
+  {
+    "id": 3,
+    "img": "Images/Italo.jpg",
+    "nombre": "Italo",
+    "precio": 10,
+    "desc": "Receta de la casa con los mejores ingredientes italianos",
+    "cantidad": 1
+  },
+  {
+    "id": 4,
+    "img": "Images/PolloChamp.jpg",
+    "nombre": "Pollo y Champiñones",
+    "precio": 13,
+    "desc": "Deliciosa combinacion de champiñones pollo italiano",
+    "cantidad": 1
+  },
+  {
+    "id": 5,
+    "img": "Images/Veggie.jpg",
+    "nombre": "Veggie",
+    "precio": 11,
+    "desc": "Pizza 100% de origen vegeta con 100% de sabor",
+    "cantidad": 1
+  }
+]
