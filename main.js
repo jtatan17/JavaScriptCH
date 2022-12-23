@@ -1,47 +1,3 @@
-/*Array de productos */
-
-const menu = [
-  {
-    id: 1,
-    img: "Images/Pepperoni.jpg",
-    nombre: "Pepperoni",
-    precio: 15,
-    desc: "Descripcion generica",
-    cantidad: 1,
-  },
-  {
-    id: 2,
-    img: "Images/Hawaiana.jpg",
-    nombre: "Hawaiana",
-    precio: 12,
-    desc: "Descripcion generica",
-    cantidad: 1,
-  },
-  {
-    id: 3,
-    img: "Images/Italo.jpg",
-    nombre: "Italo",
-    precio: 10,
-    desc: "Descripcion generica",
-    cantidad: 1,
-  },
-  {
-    id: 4,
-    img: "Images/PolloChamp.jpg",
-    nombre: "Pollo y Champiñones",
-    precio: 13,
-    desc: "Descripcion generica",
-    cantidad: 1,
-  },
-  {
-    id: 5,
-    img: "Images/Veggie.jpg",
-    nombre: "Veggie",
-    precio: 11,
-    desc: "Descripcion generica",
-    cantidad: 1,
-  },
-];
 let cart = [];
 const exitBtn = document.getElementById("exitBtn");
 const btnCart = document.getElementById("botonCarrito");
@@ -58,8 +14,6 @@ const totalPrice = document.getElementById("totalPrice");
 
 const allProducts = async () => {
 
-  /*LocalSotarege*/
- 
   const productsFetch = await fetch("productos.json");
   const prodcutosJson = await productsFetch.json();
 
@@ -88,13 +42,13 @@ const allProducts = async () => {
       updateCart();
     };
   });
-  /*Code */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("carrito")) {
-      cart = JSON.parse(localStorage.getItem("carrito"));
-      updateCart();
-    }
-  });
+  /*LocalSotarege*/
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("carrito")) {
+    cart = JSON.parse(localStorage.getItem("carrito"));
+    updateCart();
+  }
+});
   /*Contador de cada producto del carrito */
   function ripeater(index) {
     const exists = cart.some((prod) => prod.id === prodcutosJson[index].id);
